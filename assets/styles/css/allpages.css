@@ -1,0 +1,94 @@
+/* 
+Sommaire :
+
+1: Nom de la rubrik dans les posts
+2: Margin Top entre la nav et les post du block 1
+3: Image card
+4: Text Card
+5: Avatar rounded
+6: Police
+
+*/
+
+/* Nom de la rubrik dans les posts */
+
+.rubriknamePOST{
+    color: white;
+    background-color: rgb(205, 38, 38);
+    padding: 3px;
+    border-radius: 3px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.createdAtPOST{
+    color: rgb(176, 46, 46);
+    font-weight: bold;
+    font-size: 12px;
+}
+
+
+/* Margin Top entre la nav et les post du block 1 */
+
+.margintopblock1{
+    margin-top: 70px;
+}
+
+/* Image card */
+
+.containerimg{
+    overflow: hidden;
+}
+
+.containerimg{
+    height: 230px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.imagecard{
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+}
+
+.imagecard:hover{
+    transform: scale(1.1); 
+}
+
+/* Text card */
+
+.textnone{
+    text-decoration: none;
+}
+
+.texttitle{
+    color: black;
+}
+
+.textabstract{
+    color: black;
+}
+
+/* Avatar */
+
+.avatarRD{
+    border-radius: 50px;
+}
+
+/* Police */
+
+.police{
+    font-family: "Moderustic", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Background all  */
+
+.bgall{
+    background-color: rgb(241, 236, 236);
+}

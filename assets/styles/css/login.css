@@ -1,0 +1,25 @@
+/* Sommaire */
+/* 
+
+1: Container Login background
+2: Container Login
+
+*/
+
+
+/* Container Login background  */
+
+.blocklogin{
+
+    background-color: rgb(253, 246, 246);
+
+}
+
+/* Container Login */
+
+.ctlogin{
+    margin-top: 150px;
+    margin-bottom: 100px;
+    background-color: white;
+    border-radius: 10px;
+}

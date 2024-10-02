@@ -1,0 +1,38 @@
+/* 
+Sommaire 
+
+1: Margin Top entre la nav et les post du block 1
+2: Image card
+
+
+*/
+
+/* Margin Top entre la nav et les post du block 1 */
+
+.margintopblock1{
+    margin-top: 70px;
+}
+
+/* Image card */
+
+.containerimg{
+    overflow: hidden;
+}
+
+.containerimg{
+    height: 230px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.imagecard{
+    height: 230px;
+    object-fit: cover;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+}
+
+.imagecard:hover{
+    transform: scale(1.1); 
+}
+

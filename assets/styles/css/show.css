@@ -1,0 +1,58 @@
+/* Sommaire 
+
+1: Created At
+2: Background block 1 et 2
+3: Undertitle
+4: Content
+5: Dernier articles hover
+6: Rubrik show
+
+*/
+
+/* CreatedAt */
+
+.createdatSHOW{
+    color: rgb(153, 153, 148);
+}
+
+
+/* Bg block 1 et 2  */
+
+.bgshow2{
+    background-color: white;
+}
+
+.block2show{
+    margin-left: 10px;
+}
+
+/* Undertitle */
+
+.undertitleshow{
+    color: rgb(232, 28, 28);
+
+}
+
+/* Content */
+
+.contentshow{
+    font-size: 18px;
+}
+
+/* Dernier articles hover */
+
+.hoverDA:hover{
+    color: rgb(187, 72, 72);
+}
+
+/* Rubrik show */
+
+.rubrikshow{
+    color: rgb(187, 72, 72);
+}
+
+.rubrikshow:hover{
+    color: black;
+}
+
+

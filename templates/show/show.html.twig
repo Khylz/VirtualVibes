@@ -1,0 +1,176 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    VirtualVibes : Détail de l'article
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid bgall">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 bgshow2 mt-5 mb-5 py-2">
+                <div class="row">
+                    <div class="col-md-1">
+                        <div class="col-md-12 mb-3">
+                            <img class="avatarRD" src="{{ asset('divers/avatars/' ~ post.user.avatar) }}" alt=""/>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="col-md-12">
+                            <span class="police">{{ post.user.firstname|capitalize }} {{ post.user.lastname|upper }}</span>
+                            <p class="createdatSHOW">{{ post.createdAt|date('d M Y') }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-8"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <h2 class="fw-bold">{{ post.title }}</h2>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        {% if post.image %}
+                            <img class="w-100" src="{{ asset('divers/images/' ~ post.image) }}" alt="MonImage" />
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 mb-3 undertitleshow">
+                        <h4>{{ post.undertitle|raw }}</h4>
+                    </div>
+                    <div class="col-md-12 mb-3 contentshow">
+                        {{ post.content|raw }}
+                    </div>
+                    <div class="col-md-12 mb-3 undertitleshow">
+                        <h4>{{ post.undertitle2|raw }}</h4>
+                    </div>
+                    <div class="col-md-12 mb-3 contentshow">
+                        {{ post.content2|raw }}
+                    </div>
+                    <div class="col-md-12 mb-3 undertitleshow">
+                        <h4>{{ post.undertitle3|raw }}</h4>
+                    </div>
+                    <div class="col-md-12 mb-3 contentshow">
+                        {{ post.content3|raw }}
+                    </div>
+                    <div class="col-md-12 mb-3 undertitleshow">
+                        <h4>{{ post.undertitle4|raw }}</h4>
+                    </div>
+                    <div class="col-md-12 mb-3 contentshow">
+                        {{ post.content4|raw }}
+                    </div>
+                    <div class="col-md-12 mb-5">
+                        {% if app.user %}
+                            <button id="toggle-comment-form" class="btn btn-lg btn-success col-md-2">
+                                <i class="fa-solid fa-comment"></i>
+                            </button>
+                            <button id="toggle-comments" class="btn btn-lg btn-success col-md-2">📃</button>
+                            <div id="comment-form-container" style="display: none;">
+                                {{ form_start(comment_form) }}
+                                {{ form_widget(comment_form.content) }}
+                                {{ form_errors(comment_form.content) }}
+                                {{ form_widget(comment_form.save) }}
+                                {{ form_end(comment_form) }}
+                            </div>
+                        {% else %}
+                            <p><a href="{{ path('app_login') }}">Connectez-vous</a> pour laisser un commentaire.</p>
+                        {% endif %}
+                    </div>
+
+                    <div class="col-md-12">
+                        <div id="comments-container">
+                            {% for comment in comments %}
+                                <div class="comment mb-3">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-1">
+                                            <img class="avatarRD" src="{{ asset('divers/avatars/' ~ comment.user.avatar) }}" alt="avatar"/>
+                                        </div>
+                                        <div class="col-md-8 police">{{ comment.user.pseudo|capitalize }}</div>
+                                        <div class="col-md-2 text-end">{{ comment.createdAt|date('d/m/y H:i') }}</div>
+                                    </div>
+                                    <div class="col-md-12 mt-2 mb-2">
+                                        {{ comment.content|capitalize }}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div id="comments-section" style="display: none;">
+                        {% for comment in comments %}
+                            <div class="comment">
+                                <p>{{ comment.content }}</p>
+                                <small>Par {{ comment.user.pseudo }} le {{ comment.createdAt|date('d/m/Y H:i') }}</small>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 bgshow2 mt-5 mb-5 py-2 l-2 block2show">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>📣 Derniers articles</h4>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    {% for afposts in afposts %}
+                    <div class="col-md-12">
+                        <a href="{{ path('show', {'slug': afposts.slug, id: afposts.id}) }}" class="textnone text-dark">
+                            <p class="hoverDA">
+                                {{ afposts.title|length > 50 ? afposts.title|slice(0, 50) ~ '...' : afposts.title }}
+                            </p>
+                        </a>
+                    </div>
+                    {% endfor %}
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4>🎮 Rubriques</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            {% for rubrikNames in rubrikNames %}
+                            <div class="col-md-12">
+                                <a href="{{ path('posts_by_rubrik', {'id': rubrikNames.id}) }}" class="textnone rubrikshow">
+                                    <p>{{ rubrikNames.name }}</p>
+                                </a>   
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mt-2">
+                                <a href="https://www.instant-gaming.com/fr/?srsltid=AfmBOorGoKWROxb4cFcMamtT25z90r22-2mswZeJccAcBZ0v6vi_YqZv" target="_blank">
+                                    <img class="w-100" src="{{ asset('divers/images/pub3.jpg') }}" alt="First slide">
+                                </a>
+                            </div>
+                            <div class="col-md-12 mt-2">
+                                <a href="https://www.toolyon.com/bars/bar-gaming/" target="_blank">
+                                    <img class="w-100" src="{{ asset('divers/images/pub2.jpg') }}" alt="First slide">
+                                </a>
+                            </div>
+                            <div class="col-md-12 mt-2">
+                                <a href="https://admaker.fr/blog/3-facons-de-communiquer-en-display-dans-le-secteur-du-gaming/" target="_blank">
+                                    <img class="w-100" src="{{ asset('divers/images/pub1.jpg') }}" alt="First slide">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('toggle-comment-form').addEventListener('click', function() {
+        var formContainer = document.getElementById('comment-form-container');
+        formContainer.style.display = formContainer.style.display === 'none' || formContainer.style.display === '' ? 'block' : 'none';
+    });
+
+    document.getElementById('toggle-comments').addEventListener('click', function() {
+        var commentsContainer = document.getElementById('comments-container');
+        commentsContainer.style.display = commentsContainer.style.display === 'none' || commentsContainer.style.display === '' ? 'block' : 'none';
+    });
+</script>
+{% endblock %}

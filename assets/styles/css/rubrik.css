@@ -1,0 +1,25 @@
+/* Sommaire
+
+1: Rubrikname en haut
+
+*/
+
+
+/* Rubrik name */
+
+.rubriknameRB{
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.paddingRB{
+    padding: 50px;
+}
+
+.bgrubrikname{
+    background-color: white;
+}
+
+.textRBname{
+    font-size: 20px;
+}

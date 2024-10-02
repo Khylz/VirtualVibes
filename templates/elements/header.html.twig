@@ -1,0 +1,99 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <a class="navbar-brand" href="{{path('app_post')}}">
+          <img class="logo" src="{{asset('divers/images/logo.png')}}" alt="Logo VirtualVibes">
+        </a>
+      </div>
+      <div class="col-md-8">
+        <ul class="navbar-nav mb-lg-0">
+          <li class="nav-item">
+            <a href="{{path('app_post')}}" class="namesite textnone">
+              <p class="fs-4 pt-3 police">Virtual <span class="fw-bold Vibes police">Vibes</span></p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="navbar-brand">
+      <div class="row">
+        <div class="col-md-7">
+          <div class="row">
+            <div class="col-md-12" >
+              {% if app.user %}
+                {% if app.user.avatar is empty %}
+                  <i class="fa-solid fa-circle-user"></i>&ensp;
+                  <span class="pseudohd">{{app.user.Pseudo|capitalize}}</span>&emsp;
+                  <a class="loggouts" href="{{path('app_logout')}}"><i class="fa fa-power-off " aria-hidden="true"></i></a>
+                  <a class="btndashboard" href="{{path('admin')}}"><i class="fa-solid fa-circle-play"></i></a>
+                {% elseif app.user.opption is same as ('yes')%}
+                  <a class="" href=""><img class="avatarRD" src="{{asset('divers/avatars/' ~ app.user.avatar)}}"></a>&ensp;
+                  <span class="pseudohd">{{app.user.Pseudo|capitalize}}</span>&emsp;
+                  <a class="loggouts" href="{{path('app_logout')}}"><i class="fa fa-power-off " aria-hidden="true"></i></a>&emsp;
+                  <a class="btndashboard" href="{{path('admin')}}"><i class="fa-solid fa-circle-play"></i></a>
+                {% else %}
+                  <img class="avatarRD" src="{{asset('divers/avatars/' ~ app.user.avatar)}}" >&ensp;
+                  <span class="pseudohd">{{app.user.Pseudo|capitalize}}</span>&emsp;
+                  <a class="loggouts" href="{{path('app_logout')}}"><i class="fa fa-power-off " aria-hidden="true"></i></a>
+                {% endif %}
+              {% else %}
+                <a class="connexiontxt" href="{{path('app_login')}}">
+                  <i class="fa-regular fa-circle-user"></i>&emsp13;<span class="connexionsur">Connexion</span>
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="col-md-1"></div>
+
+        <div class="col-md-4">
+          <a class="reseaux" href="https://x.com/?lang=fr" target="_blank">
+            <i class="fa-brands fa-x-twitter fa-md"></i>
+          </a>
+          <a class="reseaux" href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F%3Flocale%3Dfr_FR" target="_blank">
+            <i class="fa-brands fa-facebook fa-md"></i>
+          </a>
+          <a class="reseaux" href="https://www.instagram.com/" target="_blank">
+            <i class="fa-brands fa-instagram fa-md"></i>
+          </a>
+          <a class="reseaux" href="https://www.youtube.com/?app=desktop&hl=fr" target="_blank">
+            <i class="fa-brands fa-youtube fa-md"></i>    
+          </a>
+        </div>
+      </div>
+    </div>         
+  </div>
+</nav>
+
+  <nav class="navbar navbar-expand-lg bg-light bordercenter boxshadowhd">
+    <div class="container-fluid ">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item mx-4">
+            <a class="nav-link rubrikhd" href="{{ path('posts_by_rubrik', {id: 1}) }}">JEUX</a>
+          </li>
+          <li class="nav-item mx-4">
+            <a class="nav-link rubrikhd" href="{{ path('posts_by_rubrik', {id: 2}) }}">MATERIEL</a>
+          </li>
+          <li class="nav-item mx-4">
+            <a class="nav-link rubrikhd" href="{{ path('posts_by_rubrik', {id: 3}) }}">BON PLANS</a>
+          </li>
+          <li class="nav-item mx-4">
+            <a class="nav-link rubrikhd" href="{{ path('posts_by_rubrik', {id: 4}) }}">POPULAIRE</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  
+
+  

@@ -1,0 +1,53 @@
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block javascripts %}
+{% block importmap %}{{ importmap('app') }}{% endblock %}
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="container">
+        <div class="row mb-4 text-center">
+            <h3 class="">
+                VirtualVibes : Administration
+            </h3>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-3 col-sm-6 mb-3">
+                <div class="card text-white" style="background-color: #45856A ;">
+                    <div class="card-body">
+                        <h5 class="card-title">Utilisateurs</h5>
+                        <p class="card-text display-4">{{ stats.users }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-3">
+                <div class="card text-white" style="background-color: #45856A ;">
+                    <div class="card-body">
+                        <h5 class="card-title">Articles</h5>
+                        <p class="card-text display-4">{{ stats.posts }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-3">
+                <div class="card text-white" style="background-color: #45856A ;">
+                    <div class="card-body">
+                        <h5 class="card-title">Commentaires</h5>
+                        <p class="card-text display-4">{{ stats.comments }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-3">
+                <div class="card text-white" style="background-color: #45856A ;">
+                    <div class="card-body">
+                        <h5 class="card-title">Rubriques</h5>
+                        <p class="card-text display-4">{{ stats.rubriks }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

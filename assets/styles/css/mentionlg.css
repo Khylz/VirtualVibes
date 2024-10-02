@@ -1,0 +1,20 @@
+/* 
+    Sommaire :
+
+    Pour la banderole Mentions LG le CSS viens de la Rubrik
+
+    1: Mentions LG Titre
+    2: Mentions LG Paragraphe
+*/
+
+/* Mentions LG Titre */
+
+.mentionlgTL{
+    font-size: 3em;
+}
+
+/* Mentions LG Paragraphe */
+
+.mentionlgP{
+    font-size: 20px;
+}

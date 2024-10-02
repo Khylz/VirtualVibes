@@ -1,0 +1,136 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}VirtualVibes : Accueil{% endblock %}
+
+{% block body %}
+
+{# Block 1 #}
+
+
+
+<div class="container-fluid bgall">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-12">
+                <div class="row">
+                    {% for posts in posts %}
+                        <div class="col-lg-4 mb-4 col-md-12 margintopblock1  "> <!-- Colonne pour chaque article -->
+                            <div class="card h-100 containerimg">
+                                <a href="{{ path('show', {'slug': posts.slug, id: posts.id}) }}" class="">
+                                    <img class="imagecard" src="{{ asset('divers/images/' ~ posts.image) }}" alt="image post">
+                                </a>
+                                <div class="card-body test">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-3">
+                                            <p class="rubriknamePOST">{{ posts.rubrik.name }}</p>
+                                        </div>
+                                        <div class="col-md-3"></div>
+                                        <div class="col-md-3"></div>
+                                        <div class="col-md-3"></div>
+                                    </div>
+                                    <a href="{{ path('show', {'slug': posts.slug, id: posts.id}) }}" class="textnone texttitle">
+                                        <h5 class="card-title">{{posts.title}}</h5>
+                                    </a>
+                                    <a href="{{ path('show', {'slug': posts.slug, id: posts.id}) }}" class="textnone textabstract">
+                                        <p class="card-text abstract">
+                                            {{ posts.abstract|length > 150 ? posts.abstract|slice(0, 150) ~ '...' : posts.abstract }}
+                                        </p>
+                                    </a>
+                                    <p class="createdAtPOST mt-2"> {{ posts.createdAt|date('d M Y') }} </p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{# Block 2 #}
+
+<div class="container-fluid bgall">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-12">
+                <div class="row">
+                    {% for posts2 in posts2 %}
+                        <div class="col-lg-4 mb-4 col-md-12 mt-5" > <!-- Colonne pour chaque article -->
+                            <div class="card h-100 containerimg">
+                                <a href="{{path('show', {id: posts2.id})}}" class="">
+                                    <img class="imagecard" src="{{ asset('divers/images/' ~ posts2.image) }}" alt="image post">
+                                </a>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-3">
+                                            <p class="rubriknamePOST">{{ posts2.rubrik.name }}</p>
+                                        </div>
+                                        <div class="col-md-3"></div>
+                                        <div class="col-md-3"></div>
+                                        <div class="col-md-3"></div>
+                                    </div>
+                                    <a href="{{ path('show', {'slug': posts2.slug, id: posts2.id}) }}" class="textnone texttitle">
+                                        <h5 class="card-title">{{posts2.title}}</h5>
+                                    </a>
+                                    <a href="{{ path('show', {'slug': posts2.slug, id: posts2.id}) }}" class="textnone textabstract">
+                                        <p class="card-text abstract">
+                                            {{ posts2.abstract|length > 150 ? posts2.abstract|slice(0, 150) ~ '...' : posts2.abstract }}
+                                        </p>
+                                    </a>
+                                    <p class="createdAtPOST mt-2">{{ posts2.createdAt|date('d M Y') }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{# Block 3 #}
+
+<div class="container-fluid bgall">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-12">
+                <div class="row">
+                    {% for posts3 in posts3 %}
+                        <div class="col-lg-4 mb-5 col-md-12 mt-5 "> <!-- Colonne pour chaque article -->
+                            <div class="card h-100 containerimg">
+                                <a href="{{path('show', {id: posts3.id})}}" class="">
+                                    <img class="imagecard" src="{{ asset('divers/images/' ~ posts3.image) }}" alt="image post">
+                                </a>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-3">
+                                            <p class="rubriknamePOST">{{ posts3.rubrik.name }}</p>
+                                        </div>
+                                        <div class="col-md-3"></div>
+                                        <div class="col-md-3"></div>
+                                        <div class="col-md-3"></div>
+                                    </div>
+                                    <a href="{{ path('show', {'slug': posts3.slug, id: posts3.id}) }}" class="textnone texttitle">
+                                        <h5 class="card-title">{{posts3.title}}</h5>
+                                    </a>
+                                    <a href="{{ path('show', {'slug': posts3.slug, id: posts3.id}) }}" class="textnone textabstract">
+                                        <p class="card-text abstract">
+                                            {{ posts3.abstract|length > 150 ? posts3.abstract|slice(0, 150) ~ '...' : posts3.abstract }}
+                                        </p>
+                                    </a>
+                                    <p class="createdAtPOST mt-2">{{ posts3.createdAt|date('d M Y') }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

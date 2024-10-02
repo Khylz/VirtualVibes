@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}VirtualVibes : Inscription{% endblock %}
+
+{% block body %}
+
+
+<div class="container-fluid blockregister">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6 ctregister">
+                <div class="row">
+                    <div class="col-md-12 mb-2">
+                        <div class="row align-items-center">
+                            <div class="col-md-2">
+                                <img class="logo" src="{{asset('divers/images/logo.png')}}" alt="Logo VirtualVibes">
+                            </div>
+                            <div class="col-lg-4">
+                                <h4 class=" font-weight-normal">Inscription :</h4>
+                            </div>
+                            <div class="col-md-6"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <form method="Post" enctype="multipart/form-data">
+
+
+                        {{ form_errors(registrationForm) }}
+
+                        {{ form_start(registrationForm) }}
+
+
+                        <div class="md-3 mb-2"> {{ form_widget(registrationForm.firstname, { attr: {class: 'form-control', placeholder: 'Prenom' } }) }}  </div>
+                        
+                        <div class="md-3 mb-2"> {{ form_widget(registrationForm.lastname, { attr: {class: 'form-control', placeholder: 'Nom' } }) }}  </div>
+                        
+                        <div class="md-3 mb-2"> {{ form_widget(registrationForm.email, { attr: {class: 'form-control', placeholder: 'Email' } }) }}  </div>
+                        
+                        <div class="md-3 mb-2">  {{ form_widget(registrationForm.pseudo, { attr: {class: 'form-control', placeholder: 'Pseudo' } }) }}  </div>
+                        
+                        <div class="md-3 mb-2"> {{ form_widget(registrationForm.city, { attr: {class: 'form-control', placeholder: 'Ville' } }) }}  </div>
+                                            
+                        <div class="md-3 mb-2"> {{ form_widget(registrationForm.avatar, { attr: {class: 'form-control', type: 'file', mapped: 'false' } }) }} </div>
+                        
+                        <div class="md-3 mb-2">  {{ form_widget(registrationForm.plainPassword, { attr: {class: 'form-control', placeholder: 'Mot de passe' } }) }} </div>
+                        
+                        <div class="mb-3 mb-2">
+                        
+                        <label class="form-check-label">RGPD</label>&emsp;&emsp;
+                        {{ form_widget(registrationForm.agreeTerms, { attr: { class: 'form-check-input' } }) }}
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button type="submit" class="btn btn-md btn-success">
+                                    S'inscrire
+                                </button>   
+
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="row align-items-center">
+                                    <div class="col-md-6 text-danger">
+                                        Déjà Inscrit ?
+                                    </div>
+                                    <div class="col-md-6">
+                                        <a href="{{path('app_login')}}" class="btn btn-sm btn-primary">
+                                            Se connecter
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    {{ form_end(registrationForm) }}
+
+
+                </form>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
