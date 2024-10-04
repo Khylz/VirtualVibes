@@ -26,12 +26,12 @@
                 {% if app.user.avatar is empty %}
                   <i class="fa-solid fa-circle-user"></i>&ensp;
                   <span class="pseudohd">{{app.user.Pseudo|capitalize}}</span>&emsp;
-                  <a class="loggouts" href="{{path('app_logout')}}"><i class="fa fa-power-off " aria-hidden="true"></i></a>
+                  <a class="loggouts" href="{{path('app_logout')}}"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
                   <a class="btndashboard" href="{{path('admin')}}"><i class="fa-solid fa-circle-play"></i></a>
                 {% elseif app.user.opption is same as ('yes')%}
                   <a class="" href=""><img class="avatarRD" src="{{asset('divers/avatars/' ~ app.user.avatar)}}"></a>&ensp;
                   <span class="pseudohd">{{app.user.Pseudo|capitalize}}</span>&emsp;
-                  <a class="loggouts" href="{{path('app_logout')}}"><i class="fa fa-power-off " aria-hidden="true"></i></a>&emsp;
+                  <a class="loggouts" href="{{path('app_logout')}}"><i class="fa fa-sign-out" aria-hidden="true"></i></a>&emsp;
                   <a class="btndashboard" href="{{path('admin')}}"><i class="fa-solid fa-circle-play"></i></a>
                 {% else %}
                   <img class="avatarRD" src="{{asset('divers/avatars/' ~ app.user.avatar)}}" >&ensp;

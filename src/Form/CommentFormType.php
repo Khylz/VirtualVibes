@@ -3,7 +3,6 @@
 namespace App\Form;
 
 use App\Entity\Comment;
-use App\Form\CommentFormType;
 use Symfony\Component\Form\AbstractType;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
